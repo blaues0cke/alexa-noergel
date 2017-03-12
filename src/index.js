@@ -1,6 +1,11 @@
 'use strict';
 var Alexa = require('alexa-sdk');
 
+var states = {
+    NOERGELMODE: '_NOERGELMODE',
+    STARTMODE:   '_STARTMODE'
+};
+
 var answers = [
     '__NOERGEL, du Schwanz',
     '__NOERGEL',
@@ -24,6 +29,13 @@ function formatAnswer (answer, name) {
     return formattedAnswer;
 }
 
+function getDefaultAnswer () {
+
+    var formattedAnswer = formatAnswer('__NOERGEL');
+
+    return formattedAnswer;
+}
+
 function getRandomAnswer (name) {
     var target = (
         name ? answerNames : answers
@@ -40,24 +52,45 @@ function getRandomNumber (min, max) {
         ) + min;
 }
 
-var handlers = {
-    'LaunchRequest': function () {
-        this.emit(':tell', 'test');
-        //this.emit('SayHello');
-    },
-    'NoergelIntent': function () {
-        this.emit('SayHello')
-    },
-    'SayHello':      function () {
-        var name = this.event.request.intent.slots.name;
+var newSessionHandlers = {
+    'NewSession':          function () {
+        if (Object.keys(this.attributes).length === 0) {
+            this.attributes['lastNoergler'] = null;
+        }
 
-        this.emit(':tell', getRandomAnswer(name));
+        this.handler.state = states.STARTMODE;
+
+        var question = getDefaultAnswer() + '. Soll ich weiternörgeln?';
+
+        if (this.attributes['lastNoergler']) {
+            question = question + ' Der letzte Nörgler hier war natürlich wieder ' + this.attributes['lastNoergler']
+        }
+
+        this.emit(
+            ':ask', question,
+            'Ja oder nein, Mann!'
+        );
+
+    },
+    'AMAZON.StopIntent':   function () {
+        this.emit(':tell', getDefaultAnswer());
+    },
+    'AMAZON.CancelIntent': function () {
+        this.emit(':tell', getDefaultAnswer());
+    },
+    'SessionEndedRequest': function () {
+        this.emit(':tell', getDefaultAnswer());
+    },
+    'Unhandled':           function () {
+        console.log('Unhandled');
+
+        this.emit(':ask', 'Ja oder nein, Mann!', message);
     }
 };
 
 exports.handler = function (event, context, callback) {
     var alexa = Alexa.handler(event, context);
     alexa.dynamoDBTableName = 'Noergel';
-    alexa.registerHandlers(handlers);
+    alexa.registerHandlers(newSessionHandlers);
     alexa.execute();
 };
