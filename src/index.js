@@ -59,7 +59,7 @@ var newSessionHandlers = {
 
         this.handler.state = states.NOERGELMODE;
 
-        var question = getDefaultAnswer() + '. Soll ich weiternörgeln?';
+        var question = getDefaultAnswer();
 
         if (this.attributes['lastNoergler']) {
             question = question + ' Der letzte Nörgler hier war natürlich wieder ' + this.attributes['lastNoergler']
@@ -90,32 +90,49 @@ var newSessionHandlers = {
 var noergelHandlers = Alexa.CreateStateHandler(
     states.NOERGELMODE, {
         'NewSession':          function () {
+            console.log('noergelHandlers: NewSession');
+
             this.emit('NewSession');
         },
         'AMAZON.HelpIntent':   function () {
+            console.log('noergelHandlers: AMAZON.HelpIntent');
+
             this.emit(':ask', 'Ich verrate nichts!', message);
         },
         'AMAZON.YesIntent':    function () {
+            console.log('noergelHandlers: AMAZON.YesIntent');
 
-            this.emit(':tell', getDefaultAnswer());
-            //this.attributes["guessNumber"] = Math.floor(Math.random() * 100);
-            //this.handler.state = states.GUESSMODE;
-            //77this.emit(':ask', 'Great! ' + 'Try saying a number to start the game.', 'Try saying a number.');
+            this.emit('NoergelIntent');
         },
         'AMAZON.NoIntent':     function () {
+            console.log('noergelHandlers: AMAZON.NoIntent');
+
             this.emit(':tell', getDefaultAnswer());
         },
-        "AMAZON.StopIntent":   function () {
+        'AMAZON.StopIntent':   function () {
+            console.log('noergelHandlers: AMAZON.StopIntent');
+
             this.emit(':tell', getDefaultAnswer());
         },
-        "AMAZON.CancelIntent": function () {
+        'AMAZON.CancelIntent': function () {
+            console.log('noergelHandlers: AMAZON.CancelIntent');
+
             this.emit(':tell', getDefaultAnswer());
         },
         'SessionEndedRequest': function () {
+            console.log('noergelHandlers: SessionEndedRequest');
+
             this.emit(':tell', getDefaultAnswer() + 'TODO');
         },
+        'NoergelIntent':       function () {
+            console.log('noergelHandlers: NoergelIntent');
+            this.emit(':ask', getDefaultAnswer());
+            //this.attributes['guessNumber'] = Math.floor(Math.random() * 100);
+            //this.handler.state = states.GUESSMODE;
+            //77this.emit(':ask', 'Great! ' + 'Try saying a number to start the game.', 'Try saying a number.');
+        },
         'Unhandled':           function () {
-            console.log('Unhandled');
+            console.log('noergelHandlers: Unhandled');
 
             this.emit(':ask', 'Ja oder nein Digger!', message);
         }
