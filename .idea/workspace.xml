@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4777367e-808b-44ec-8bc9-3a3e5bc93e71" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/speechAssets/IntentSchema.json" afterPath="$PROJECT_DIR$/speechAssets/IntentSchema.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/speechAssets/SampleUtterances.txt" afterPath="$PROJECT_DIR$/speechAssets/SampleUtterances.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/language.js" afterPath="$PROJECT_DIR$/src/lib/language.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/textBuilder.js" afterPath="$PROJECT_DIR$/src/lib/textBuilder.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/util.js" afterPath="$PROJECT_DIR$/src/lib/util.js" />
-    </list>
+    <list default="true" id="4777367e-808b-44ec-8bc9-3a3e5bc93e71" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/speechAssets/IntentSchema.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="33">
-              <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+              <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -37,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/speechAssets/SampleUtterances.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="11" column="87" lean-forward="false" selection-start-line="11" selection-start-column="87" selection-end-line="11" selection-end-column="87" />
+              <caret line="11" column="87" lean-forward="true" selection-start-line="11" selection-start-column="87" selection-end-line="11" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -48,7 +40,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
               <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-              <folding />
+              <folding>
+                <marker date="1489618639000" expanded="true" signature="1319:1586" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,6 +76,7 @@
               <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding>
                 <element signature="e#0#51#0" expanded="false" />
+                <marker date="1489618920000" expanded="true" signature="91:419" ph="[...]" />
               </folding>
             </state>
           </provider>
@@ -330,12 +325,12 @@
       <option name="presentableId" value="Default" />
       <updated>1489313369028</updated>
       <workItem from="1489313370432" duration="9770000" />
-      <workItem from="1489612874766" duration="5938000" />
+      <workItem from="1489612874766" duration="6962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15708000" />
+    <option name="totallyTimeSpent" value="16732000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1024" extended-state="6" />
@@ -383,7 +378,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1489618639000" expanded="true" signature="1319:1586" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -466,7 +463,7 @@
     <entry file="file://$PROJECT_DIR$/speechAssets/IntentSchema.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
-          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -477,6 +474,7 @@
           <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding>
             <element signature="e#0#51#0" expanded="false" />
+            <marker date="1489618920000" expanded="true" signature="91:419" ph="[...]" />
           </folding>
         </state>
       </provider>
@@ -485,14 +483,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-          <folding />
+          <folding>
+            <marker date="1489618639000" expanded="true" signature="1319:1586" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/speechAssets/SampleUtterances.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="87" lean-forward="false" selection-start-line="11" selection-start-column="87" selection-end-line="11" selection-end-column="87" />
+          <caret line="11" column="87" lean-forward="true" selection-start-line="11" selection-start-column="87" selection-end-line="11" selection-end-column="87" />
           <folding />
         </state>
       </provider>
