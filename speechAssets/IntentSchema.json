@@ -1,6 +1,26 @@
 {
     "intents": [
         {
+            "intent": "AMAZON.CancelIntent",
+            "slots":  [ ]
+        },
+        {
+            "intent": "AMAZON.HelpIntent",
+            "slots":  [ ]
+        },
+        {
+            "intent": "AMAZON.NoIntent",
+            "slots":  [ ]
+        },
+        {
+            "intent": "AMAZON.StopIntent",
+            "slots":  [ ]
+        },
+        {
+            "intent": "AMAZON.YesIntent",
+            "slots":  [ ]
+        },
+        {
             "intent": "NoergelIntent",
             "slots":  [ ]
         }

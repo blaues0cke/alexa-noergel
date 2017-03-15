@@ -1,6 +1,1 @@
 NoergelIntent nörgel
-NoergelIntent {Name} nörgelt
-NoergelIntent {Name} nörgelt wieder rum
-NoergelIntent {Name} ist nur am Schimpfen
-NoergelIntent nörgel nörgel
-NoergelIntent das ist ein test
