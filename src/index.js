@@ -1,109 +1,9 @@
 'use strict';
-var Alexa = require('alexa-sdk');
-
-const language = {
-    help: 'Du nörgelst, ich nörgel. Ganz einfach.',
-    stop: 'Ok ok, genug genörgelt. Nörgel.',
-};
-
-var textBuilder = {
-
-    build:   function (text) {
-        // TODO: format + add nörgels
-
-        return text;
-    },
-    noergel: function () {
-        return 'todo';
-    }
-};
-
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-var answers = [
-    '__NOERGEL, du Schwanz',
-    '__NOERGEL',
-    'schon wieder?'
-];
-
-var answerNames = [
-    '__NAME, du Schwanz, hör auf herumzunörgeln',
-    '__NOERGEL, __NAME'
-];
-
-function formatAnswer (answer, name) {
-    var count = getRandomNumber(1, 5);
-    var noergels = 'Nörgel '.repeat(count).trim();
-    var formattedAnswer = answer.replace(/__NOERGEL/g, noergels);
-
-    if (name) {
-        formattedAnswer = answer.replace(/__NAME/g, name);
-    }
-
-    return formattedAnswer;
-}
-
-function getDefaultAnswer () {
-
-    var formattedAnswer = formatAnswer('__NOERGEL');
-
-    return formattedAnswer;
-}
-
-function getRandomAnswer (name) {
-    var target = (
-        name ? answerNames : answers
-    );
-    var randomAnswer = target[Math.floor(Math.random() * target.length)];
-    var formattedAnswer = formatAnswer(randomAnswer, name);
-
-    return formattedAnswer;
-}
-
-function getRandomNumber (min, max) {
-    return Math.random() * (
-            max - min
-        ) + min;
-}
-
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
-//####
+// @formatter:off
+var Alexa       = require('alexa-sdk');
+var language    = require('./lib/language');
+var textBuilder = require('./lib/textBuilder');
+// @formatter:on
 
 var noergelHandlers = {
 
@@ -114,7 +14,7 @@ var noergelHandlers = {
 
     // When the user said something like "Alexa stop" (without application name)
     'AMAZON.HelpIntent': function () {
-        this.emit(':tell', textBuilder.text(language.help));
+        this.emit(':tell', textBuilder.replacePlaceholders(language.help));
     },
 
     // When the user said "no" to a question
@@ -124,7 +24,7 @@ var noergelHandlers = {
 
     // When the user said "stop"
     'AMAZON.StopIntent': function () {
-        this.emit(':tell', textBuilder.text(language.stop));
+        this.emit(':tell', textBuilder.replacePlaceholders(language.stop));
     },
 
     // When the user said "yes" to a question
@@ -134,7 +34,7 @@ var noergelHandlers = {
 
     // Nörgel nörgel nörgel
     'NoergelIntent': function () {
-        this.emit(':tell', textBuilder.noergel());
+        this.emit(':ask', textBuilder.noergel());
     },
 
     // User started the skill
@@ -145,7 +45,7 @@ var noergelHandlers = {
     // Unknown request
     'Unhandled': function () {
         this.emit('NoergelIntent');
-    },
+    }
 };
 
 /**
