@@ -1,1 +1,12 @@
 NoergelIntent nörgel
+NoergelIntent nörgel nörgel
+NoergelIntent nörgel nörgel nörgel
+NoergelIntent nörgel nörgel nörgel nörgel
+NoergelIntent nörgel nörgel nörgel nörgel nörgel
+
+PersonIntent Wer nervt mehr {FirstPerson} oder {SecondPerson}
+PersonIntent Wer nerviger ist {FirstPerson} oder {SecondPerson}
+PersonIntent Ist {FirstPerson} oder {SecondPerson} nerviger
+PersonIntent Wer ist eigentlich nerviger {FirstPerson} oder {SecondPerson}
+PersonIntent Wer geht einem mehr auf die Nerven {FirstPerson} oder {SecondPerson}
+PersonIntent Wer kann einem mehr auf die nerven gehen {FirstPerson} oder {SecondPerson}

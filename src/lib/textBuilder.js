@@ -7,10 +7,8 @@ var util = require('./util');
 
 // @formatter:off
 var textBuilder = {
-    build: function (text) {
-        // TODO: format + add nörgels
-
-        return text;
+    getPersonAnswer: function (person) {
+        return textBuilder.replacePlaceholders('__ANSWER_PREFIX' + person);
     },
     getRandomNoergel: function () {
         var count    = util.getRandomNumber(1, 5);
@@ -19,8 +17,11 @@ var textBuilder = {
         return noergels;
     },
     replacePlaceholders: function (answer) {
+        var answerPrefix    = util.getRandomArrayItem(language.answerPrefixes);
         var noergels        = textBuilder.getRandomNoergel();
-        var formattedAnswer = answer.replace(/__NOERGEL/g, noergels);
+        var formattedAnswer = answer;
+            formattedAnswer = formattedAnswer.replace(/__NOERGEL/g,       noergels);
+            formattedAnswer = formattedAnswer.replace(/__ANSWER_PREFIX/g, answerPrefix + ' ');
 
         return formattedAnswer;
     },

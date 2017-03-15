@@ -2,27 +2,40 @@
     "intents": [
         {
             "intent": "AMAZON.CancelIntent",
-            "slots":  [ ]
+            "slots": []
         },
         {
             "intent": "AMAZON.HelpIntent",
-            "slots":  [ ]
+            "slots": []
         },
         {
             "intent": "AMAZON.NoIntent",
-            "slots":  [ ]
+            "slots": []
         },
         {
             "intent": "AMAZON.StopIntent",
-            "slots":  [ ]
+            "slots": []
         },
         {
             "intent": "AMAZON.YesIntent",
-            "slots":  [ ]
+            "slots": []
         },
         {
             "intent": "NoergelIntent",
-            "slots":  [ ]
+            "slots": []
+        },
+        {
+            "intent": "PersonIntent",
+            "slots": [
+                {
+                    "name": "FirstPerson",
+                    "type": "AMAZON.DE_FIRST_NAME"
+                },
+                {
+                    "name": "SecondPerson",
+                    "type": "AMAZON.DE_FIRST_NAME"
+                }
+            ]
         }
     ]
 }

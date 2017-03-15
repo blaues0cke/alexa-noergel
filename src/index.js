@@ -3,7 +3,7 @@
 var Alexa       = require('alexa-sdk');
 var language    = require('./lib/language');
 var textBuilder = require('./lib/textBuilder');
-// @formatter:on
+var util        = require('./lib/util');
 
 var noergelHandlers = {
 
@@ -42,9 +42,20 @@ var noergelHandlers = {
         this.emit('NoergelIntent');
     },
 
+    // The user wants to compare two persons
+    'PersonIntent': function () {
+        var person = util.getRandomArrayItem(
+        [
+            this.event.request.intent.slots.FirstPerson.value,
+            this.event.request.intent.slots.SecondPerson.value
+        ]);
+
+        this.emit(':tell', textBuilder.getPersonAnswer(person));
+    },
+
     // Unknown request
     'Unhandled': function () {
-        this.emit('NoergelIntent');
+        this.emit('AMAZON.StopIntent');
     }
 };
 
@@ -55,6 +66,8 @@ var noergelHandlers = {
  */
 exports.handler = function (event, context, callback) {
     var alexa = Alexa.handler(event, context);
+    alexa.appId = 'amzn1.ask.skill.dc1cc440-a9fe-4bad-a8fc-117081a38579';
     alexa.registerHandlers(noergelHandlers);
     alexa.execute();
 };
+// @formatter:on
