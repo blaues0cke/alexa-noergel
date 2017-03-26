@@ -12,6 +12,7 @@ const language = {
         'Mit an Sicherheit grenzender Wahrscheinlichkeit ist das'
     ],
     help:           'Sage nörgel um mit mir um die Wette zu nörgeln. Außerdem kann ich für dich herausfinden, welche Person nerviger ist. Frage mich dazu einfach: Nörgelgenerator, wer ist nerviger, Thomas oder Cornelia? Wenn ich dir auf die Nerven gehe, sage einfach Stop oder Abbrechen.',
+    iHaveNoIdea:    'Ich habe keine Anhnung',
     noergel:        'Nörgel',
     stop:           'Ok ok, genug genörgelt. __NOERGEL.'
 };

@@ -8,7 +8,11 @@ var util = require('./util');
 // @formatter:off
 var textBuilder = {
     getPersonAnswer: function (person) {
-        return textBuilder.replacePlaceholders('__ANSWER_PREFIX' + person);
+        if (person) {
+            return textBuilder.replacePlaceholders('__ANSWER_PREFIX' + person);
+        }
+
+        return language.iHaveNoIdea;
     },
     getRandomNoergel: function () {
         var count    = util.getRandomNumber(1, 5);
