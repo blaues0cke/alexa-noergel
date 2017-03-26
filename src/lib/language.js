@@ -8,11 +8,10 @@ const language = {
         'Ohne Zweifel',
         'Ohne überlegen zu müssen',
         'Ein offenes Geheimnis.',
-        'Selbst Hitler war nicht so nervig wie ',
         'Das weiß ja jede künstliche Intelligenz. Es ist',
         'Mit an Sicherheit grenzender Wahrscheinlichkeit ist das'
     ],
-    help:           'Du nörgelst, ich nörgel. Ganz einfach.',
+    help:           'Sage nörgel um mit mir um die Wette zu nörgeln. Außerdem kann ich für dich herausfinden, welche Person nerviger ist. Frage mich dazu einfach: Nörgelgenerator, wer ist nerviger, Thomas oder Cornelia? Wenn ich dir auf die Nerven gehe, sage einfach Stop oder Abbrechen.',
     noergel:        'Nörgel',
     stop:           'Ok ok, genug genörgelt. __NOERGEL.'
 };
