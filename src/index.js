@@ -18,7 +18,7 @@ var noergelHandlers = {
     'AMAZON.HelpIntent': function () {
         console.log('AMAZON.HelpIntent');
 
-        this.emit(':tell', textBuilder.replacePlaceholders(language.help));
+        this.emit(':ask', textBuilder.replacePlaceholders(language.help));
     },
 
     // When the user said "no" to a question
